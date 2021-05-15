@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&display=swap");
+
+// usar la fuente Poppins para todos los elementos de la app
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
+// importación de los archivos scss de estilos de la app
+@import './core/colors';
+@import './core/base';
+@import './core/components';
+@import './layout/navbar';
+@import './timer/timer';

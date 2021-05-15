@@ -1,0 +1,109 @@
+@import './colors';
+
+// lista de tamaños para margins y paddings
+$sizes: (
+	"1": 4px, 
+	"2": 8px, 
+	"3": 16px, 
+	"4": 24px, 
+	"5": 45px
+);
+
+h1, h2, h3 {
+	margin: 0;
+}
+
+// ciclo para crear margins y paddings
+@each $size, $glyph in $sizes {
+	// creando margins
+	.m-#{$size} {
+		margin: $glyph;
+	}
+
+	.mt-#{$size} {
+		margin-top: $glyph;
+	}
+
+	.mb-#{$size} {
+		margin-bottom: $glyph;
+	}
+
+	.mr-#{$size} {
+		margin-right: $glyph;
+	}
+
+	.ml-#{$size} {
+		margin-left: $glyph;
+	}
+
+	// creando paddings
+	.p-#{$size} {
+		padding: $glyph;
+	}
+
+	.pt-#{$size} {
+		padding-top: $glyph;
+	}
+
+	.pb-#{$size} {
+		padding-bottom: $glyph;
+	}
+
+	.pr-#{$size} {
+		padding-right: $glyph;
+	}
+
+	.pl-#{$size} {
+		padding-left: $glyph;
+	}
+}
+
+// creando backgrounds y colores de texto
+@each $name, $glyph in $theme-colors {
+	.bg-#{$name} {
+	  background: $glyph !important;
+	}
+
+	.text-#{$name} {
+		color: $glyph !important;
+	}
+
+	.border-#{$name} {
+		border: 1px solid $glyph;
+	}
+
+	.border-bottom-#{$name} {
+		border-bottom: 1px solid $glyph;
+	}
+
+	.border-top-#{$name} {
+		border-top: 1px solid $glyph;
+	}
+}
+
+.btn-primary {
+	color: white;
+	background: map-get($theme-colors, "primary");
+}
+
+.btn-red {
+	color: white;
+	background: map-get($theme-colors, "red");
+}
+
+.container {
+	min-height: 100vh;
+}
+
+.mx-auto {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.w-100 {
+	width: 100% !important;
+}

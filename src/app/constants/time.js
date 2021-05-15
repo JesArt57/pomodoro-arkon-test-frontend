@@ -1,0 +1,6 @@
+const SHORT_TIME  = 30;
+const MEDIUM_TIME = 45;
+const LARGE_TIME  = 60;
+const CUSTOM_TIME = 25;
+
+export default { SHORT_TIME, MEDIUM_TIME, LARGE_TIME, CUSTOM_TIME };
