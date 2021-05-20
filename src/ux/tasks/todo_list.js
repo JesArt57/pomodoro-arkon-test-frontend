@@ -86,7 +86,7 @@ export default function TodoList({ filter, remainingTimeRef }) {
 	function handleOnDragEnd(result) {
 		if (!result.destination) return;
 
-		const tasksCopy = Array.from(filteredTasks);
+		const tasksCopy = Array.from(filteredIncompletedtasks);
 		const [ reorderedItem ] = tasksCopy.splice(result.source.index, 1);
 		tasksCopy.splice(result.destination.index, 0, reorderedItem);
 
