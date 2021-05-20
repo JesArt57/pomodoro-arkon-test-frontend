@@ -1,6 +1,12 @@
-const SHORT_TIME  = 30;
-const MEDIUM_TIME = 45;
-const LARGE_TIME  = 60;
-const CUSTOM_TIME = 25;
+// definiendo las constantes de los tipos de tiempo
+// estas sirven para hacer código mas matenible y si en 
+// dado caso se quiere cambiar el valor de alguna aplique
+// en todos los archivos y asi no es necesario cambiar uno por uno
+const TIME_TYPES = { 
+	SHORT_TIME: 30, 
+	MEDIUM_TIME: 45,
+	LARGE_TIME: 60, 
+	CUSTOM_TIME: 25
+};
 
-export default { SHORT_TIME, MEDIUM_TIME, LARGE_TIME, CUSTOM_TIME };
+export default TIME_TYPES;

@@ -1,6 +1,8 @@
 import { types } from "../types";
 
 // declarando acciones para manipular el estado del timer
+// ninguna de estas acciones altera directamente la BD
+// solo actualiza el estado de redux
 export const runTimer = () => ({ type: types.runTimer });
 
 export const stopTimer = () => ({ type: types.stopTimer });
@@ -15,10 +17,6 @@ export const updateTime = (time) => ({
 	payload: time
 });
 
-export const updateCustomTime = (customTime) => ({ 
-	type: types.updateCustomTime,
-	payload: customTime
-});
 
 export const updateTimerType = (type) => ({ 
 	type: types.updateTimerType,
@@ -26,7 +24,3 @@ export const updateTimerType = (type) => ({
 });
 
 export const updateCountDownKey = () => ({ type: types.updateCountDownKey });
-
-export const openCustomTimeModal = () => ({ type: types.openCustomTimeModal });
-
-export const closeCustomTimeModal = () => ({ type: types.closeCustomTimeModal });

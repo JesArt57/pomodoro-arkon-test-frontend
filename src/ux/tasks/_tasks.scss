@@ -1,0 +1,35 @@
+.todo-item {
+	border: 1px solid map-get($theme-colors, "light-blue");
+	color: map-get($theme-colors, "dark-blue");
+	background-color: map-get($theme-colors, "light-blue");
+
+	&:hover,:focus {
+		border: 2px solid map-get($theme-colors, "white");
+		color: map-get($theme-colors, "navy-blue");
+	}
+}
+
+.Mui-checked {
+	color: map-get($theme-colors, "red") !important;
+}
+
+.Mui-checked + .MuiSwitch-track {
+	color: map-get($theme-colors, "red") !important;
+	background-color: map-get($theme-colors, "red") !important;
+}
+
+.task-options {
+	color: white;
+
+	.MuiSelect-nativeInput + svg {
+		color: map-get($theme-colors, "light-blue");
+	}
+
+	.MuiInput-underline::before {
+		border-bottom: 1px solid white !important;
+	}
+
+	.MuiInput-underline::after {
+		border-bottom: 1px solid white !important;
+	}
+}

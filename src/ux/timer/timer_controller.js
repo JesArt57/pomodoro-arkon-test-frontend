@@ -14,6 +14,8 @@ export default function TimerOptions() {
 
 	const { timerType } = useSelector(state => state.timer);
 
+	const { tasks } = useSelector(state => state.task);
+
 	function handleRunTimer() {
 		dispatch(runTimer());
 	}
@@ -40,7 +42,6 @@ export default function TimerOptions() {
 				dispatch(updateTime(TIME_TYPES.LARGE_TIME));
 				break;
 			default:
-				dispatch(updateTime(TIME_TYPES.SHORT_TIME));
 				break;
 		}
 	}
@@ -48,15 +49,15 @@ export default function TimerOptions() {
 	return <div className="mt-5 pl-5 pr-5">
 		<Box display="flex" justifyContent="space-around" alignItems="center">
 			<IconButton variant="contained" className="text-light-blue"
-				onClick={handleRunTimer}>
+				onClick={handleRunTimer} disabled={tasks.length === 0}>
 				<PlayArrow fontSize="large" />
 			</IconButton>
 			<IconButton variant="contained" className="text-light-blue"
-				onClick={handleStopTimer}>
+				onClick={handleStopTimer} disabled={tasks.length === 0}>
 				<Pause fontSize="large" />
 			</IconButton>
 			<IconButton variant="contained" className="text-light-blue"
-				onClick={handleResetTimer}>
+				onClick={handleResetTimer} disabled={tasks.length === 0}>
 				<Replay fontSize="large" />
 			</IconButton>
 		</Box>

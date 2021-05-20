@@ -1,12 +1,16 @@
 import React from 'react';
-import TimerOptions from './timer_options';
 import TimerController from './timer_controller';
 import CountDownTimer from './count_down_timer';
-import CustomTimeForm from './custom_time_form';
 
-export default function Timer() {
+export default function Timer({ remainingTimeRef }) {
 
+	// funcion que recibe el componente de CountdownCircleTimer
+	// para mostrar el tiempo y la aproveche para actualizar
+	// el tiempo en la referencia que ocupo para determinar el tiempo
+	// que tomo hacer la tarea
 	function timerChildren({ remainingTime }) {
+		remainingTimeRef.current = remainingTime;
+
 		const hours = `${Math.floor(remainingTime / 3600)}`.length === 1
 			? "0" + Math.floor(remainingTime / 3600) 
 			: '' + Math.floor(remainingTime / 3600);
@@ -22,17 +26,15 @@ export default function Timer() {
 		return `${hours}:${minutes}:${seconds}`;
 	}
 	
-	return <div className="mx-auto text-center mt-5 pt-5" style={{ maxWidth: '30rem' }}>
-		<TimerOptions />
+	return <div className="mx-auto text-center pt-5">
 		<center>
-			<div className="mt-5" style={{ fontSize: '3.5rem' }}>
+			<div style={{ fontSize: '3.5rem' }}>
 				<CountDownTimer>
 					{timerChildren}
 				</CountDownTimer>
 			</div>
 		</center>
 		<TimerController />
-		<CustomTimeForm />
 	</div>
 
 }

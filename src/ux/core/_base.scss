@@ -2,6 +2,7 @@
 
 // lista de tamaños para margins y paddings
 $sizes: (
+	"0": 0px,
 	"1": 4px, 
 	"2": 8px, 
 	"3": 16px, 
@@ -106,4 +107,16 @@ h1, h2, h3 {
 
 .w-100 {
 	width: 100% !important;
+}
+
+.w-50 {
+	width: 50% !important;
+}
+
+.rounded-border {
+	border-radius: 6px !important;
+}
+
+.d-none {
+	display: none !important;
 }
