@@ -49,7 +49,7 @@ export default function Navbar() {
 				<div className="mr-3" />
 				<Button variant="contained" startIcon={<Send />}
 					onClick={createRandomTasks}>
-					Crear tareas aleatorias
+					Crear tareas completadas aleatorias
 				</Button>
 			</Box>
 		</Box>
